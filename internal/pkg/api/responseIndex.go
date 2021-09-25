@@ -59,15 +59,23 @@ func (ri *ResponseIndex) ExtractToken(opt Options) string {
 }
 
 // VideoOptions is a ResponseIndex method that gets all video options
+<<<<<<< HEAD
 func (ri *ResponseIndex) VideoOptions() (opts map[string][]*Options) {
 	opts = make(map[string][]*Options)
 
+=======
+func (ri *ResponseIndex) VideoOptions() (opts []*Options) {
+>>>>>>> cd15077 (Some changes)
 	for format, value := range ri.Links {
 		var vo Options
 		for _, value2 := range value {
 			vo.Format = Format(format)
 			vo.Quality = value2.Quality
+<<<<<<< HEAD
 			opts[format] = append(opts[format], &vo)
+=======
+			opts = append(opts, &vo)
+>>>>>>> cd15077 (Some changes)
 		}
 	}
 
@@ -85,6 +93,10 @@ func sendRequest(data url.Values, link string) ([]byte, error) {
 	//Set headers of HTTP request
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Add("Content-Length", strconv.Itoa(len(data.Encode())))
+<<<<<<< HEAD
+=======
+	req.Header.Add("Connection", "close")
+>>>>>>> cd15077 (Some changes)
 
 	// Create client
 	client := &http.Client{}

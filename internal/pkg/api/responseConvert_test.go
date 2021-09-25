@@ -1,7 +1,11 @@
 package api_test
 
 import (
+<<<<<<< HEAD
 	"github.com/KiritoNya/youtubeDownload/internal/pkg/api"
+=======
+	"github.com/KiritoNya/gotube/internal/pkg/api"
+>>>>>>> cd15077 (Some changes)
 	"testing"
 )
 
