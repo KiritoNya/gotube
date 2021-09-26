@@ -2,31 +2,14 @@ package api
 
 import (
 	"encoding/json"
-<<<<<<< HEAD
 	"fmt"
 	"net/url"
-=======
-	"net/url"
 	"time"
->>>>>>> cd15077 (Some changes)
 )
 
 // ResponseConvert is a json response struct of convert response
 type ResponseConvert struct {
 	response
-<<<<<<< HEAD
-	CStatus string `json:"c_status"`
-	VideoId string `json:"vid"`
-	Title   string `json:"title"`
-	Format  string `json:"ftype"`
-	Quality string `json:"quality"`
-	Url     string `json:"dlink"`
-}
-
-// NewResponseConvert creates a ResponseConvert instance
-func NewResponseConvert(idVideo, token string) (ResponseConvert, error) {
-	var rc ResponseConvert
-=======
 	CStatus    string `json:"c_status"`
 	VideoId    string `json:"vid"`
 	Title      string `json:"title"`
@@ -40,7 +23,6 @@ func NewResponseConvert(idVideo, token string) (ResponseConvert, error) {
 // NewResponseConvert creates a ResponseConvert instance
 func NewResponseConvert(idVideo, token string) (*ResponseConvert, error) {
 	var rcReturn ResponseConvert
->>>>>>> cd15077 (Some changes)
 
 	//Setting form data
 	data := url.Values{}
@@ -49,21 +31,10 @@ func NewResponseConvert(idVideo, token string) (*ResponseConvert, error) {
 
 	content, err := sendRequest(data, BaseUrl+ConvertEndpoint)
 	if err != nil {
-<<<<<<< HEAD
-		return ResponseConvert{}, err
+		return nil, err
 	}
 
 	fmt.Println(string(content))
-
-	err = json.Unmarshal(content, &rc)
-	if err != nil {
-		return ResponseConvert{}, err
-	}
-
-	return rc, nil
-=======
-		return nil, err
-	}
 
 	err = json.Unmarshal(content, &rcReturn)
 	if err != nil {
@@ -97,5 +68,4 @@ func NewResponseConvert(idVideo, token string) (*ResponseConvert, error) {
 	}
 
 	return &rcReturn, nil
->>>>>>> cd15077 (Some changes)
 }

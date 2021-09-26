@@ -3,11 +3,7 @@ package api
 const BaseUrl string = "https://yt1s.com/api"
 const IndexEndpoint string = "/ajaxSearch/index"
 const ConvertEndpoint string = "/ajaxConvert/convert"
-<<<<<<< HEAD
-=======
 const CheckTaskEndpoint string = "/ajaxConvert/checkTask"
-
->>>>>>> cd15077 (Some changes)
 const IndexEndpointParam string = "home"
 
 // response is a type that contains info of response
