@@ -10,7 +10,7 @@ func TestSearch(t *testing.T) {
 	sr, err := gotube.Search(gotube.SearchOptions{
 		Query:  "JPOP",
 		Limit:  5,
-		ApiKey: "AIzaSyDG4bWuL-cpgsO0nbr7gWBeWt9aXDVqgoI",
+		ApiKey: "<API_KEY>",
 	})
 	if err != nil {
 		t.Fatal(err)
