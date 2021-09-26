@@ -6,11 +6,15 @@ import (
 
 // Video is a type that contains video information
 type Video struct {
-	Id      string
-	Title   string
-	Url     string
-	Options []*VideoOptions
-	links   map[string]map[string]api.Modality
+	Id          string
+	Url         string
+	Title       string
+	Description string
+	Thumbnails  Thumbnails
+	PublishedAt string
+	Channel     *Channel
+	Options     []*VideoOptions
+	links       map[string]map[string]api.Modality
 }
 
 // VideoOptions are option of video
